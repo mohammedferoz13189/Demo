@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            background: #000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #e50914;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #e50914;
+            color: #fff;
+            border: none;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 30px;
+            color: #e50914;
+        }
+
+        .services,
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PowerFit Gym</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h2>Build Your Body. Transform Your Life.</h2>
+            <p>Join the best gym in town and become your strongest self.</p>
+            <a href="#pricing" class="btn">Join Now</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            PowerFit Gym is a modern fitness center with top-class equipment,
+            certified trainers, and a motivating environment to help you reach
+            your fitness goals.
+        </p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">🏋️ Weight Training</div>
+            <div class="card">🤸 Cardio & CrossFit</div>
+            <div class="card">🧘 Yoga & Stretching</div>
+            <div class="card">👨‍🏫 Personal Training</div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Membership Plans</h2>
+        <div class="pricing">
+            <div class="card">
+                <h3>Monthly</h3>
+                <p>$30 / month</p>
+            </div>
+            <div class="card">
+                <h3>Quarterly</h3>
+                <p>$80 / 3 months</p>
+            </div>
+            <div class="card">
+                <h3>Yearly</h3>
+                <p>$300 / year</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@powerfitgym.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Location: Main Street, Your City</p>
+    </section>
+
+    <footer>
+        © 2026 PowerFit Gym. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
