@@ -1,195 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TVTRRT34');</script>
-<!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8B7JHVK8JD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8B7JHVK8JD');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerFit Gym</title>
-
+    <title>BMW Motorrad - Premium Motorcycles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #000000;
+            --accent: #0066B1;
+            --accent-bright: #00A4E4;
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --gray: #7a7a7a;
+            --bg-dark: #0a0a0a;
+            --bg-section: #f5f5f5;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background-color: #111;
-            color: #fff;
+            font-family: 'Barlow', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        header {
-            background: #000;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            color: #e50914;
-        }
-
-        nav a {
-            color: #fff;
-            margin-left: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #e50914;
-        }
-
+        /* Hero Section */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1') center/cover;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 102, 177, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 164, 228, 0.1) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
             text-align: center;
-            padding: 20px;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            line-height: 0.9;
         }
 
-        .btn {
-            padding: 12px 30px;
-            background: #e50914;
-            color: #fff;
-            border: none;
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--accent-bright);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.2s ease-out 0.3s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--accent);
+            color: var(--text-light);
             text-decoration: none;
-            font-size: 1rem;
-            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.2s ease-out 0.6s backwards;
         }
 
-        section {
-            padding: 60px 40px;
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 177, 0.4);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-bright);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-bright);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Models Section */
+        .models-section {
+            padding: 8rem 5%;
+            background: var(--bg-section);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
             text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
         }
 
-        section h2 {
-            margin-bottom: 30px;
-            color: #e50914;
-        }
-
-        .services,
-        .pricing {
+        .models-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .card {
-            background: #1c1c1c;
-            padding: 30px;
-            border-radius: 10px;
+        .bike-card {
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
         }
 
+        .bike-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .bike-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bike-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .bike-card:hover .bike-image {
+            transform: scale(1.05);
+        }
+
+        .bike-info {
+            padding: 2rem;
+        }
+
+        .bike-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            letter-spacing: 0.05em;
+        }
+
+        .bike-category {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .bike-specs {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .spec {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bike-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 1.5rem;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 8rem 5%;
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-bright);
+        }
+
+        .feature h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .feature p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Footer */
         footer {
             background: #000;
+            color: var(--text-light);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-bright);
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVTRRT34"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">BMW MOTORRAD</div>
+        <ul class="nav-links">
+            <li><a href="#models">Models</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <h1>PowerFit Gym</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <div class="hero">
-        <div>
-            <h2>Build Your Body. Transform Your Life.</h2>
-            <p>Join the best gym in town and become your strongest self.</p>
-            <a href="#pricing" class="btn">Join Now</a>
-        </div>
-    </div>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            PowerFit Gym is a modern fitness center with top-class equipment,
-            certified trainers, and a motivating environment to help you reach
-            your fitness goals.
-        </p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="card">🏋️ Weight Training</div>
-            <div class="card">🤸 Cardio & CrossFit</div>
-            <div class="card">🧘 Yoga & Stretching</div>
-            <div class="card">👨‍🏫 Personal Training</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MAKE LIFE<br>A RIDE</h1>
+            <p class="tagline">Premium Motorcycles Engineered for Excellence</p>
+            <a href="#models" class="cta-button">Explore Collection</a>
         </div>
     </section>
 
-    <section id="pricing">
-        <h2>Membership Plans</h2>
-        <div class="pricing">
-            <div class="card">
-                <h3>Monthly</h3>
-                <p>$30 / month</p>
+    <!-- Models Section -->
+    <section id="models" class="models-section">
+        <h2 class="section-title">Our Collection</h2>
+        <div class="models-grid">
+            <!-- S 1000 RR -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">Sport</div>
+                    <h3 class="bike-name">S 1000 RR</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>205 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span>197 kg</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Top Speed</span>
+                            <span>299 km/h</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$17,895</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Quarterly</h3>
-                <p>$80 / 3 months</p>
+
+            <!-- R 1250 GS -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">Adventure</div>
+                    <h3 class="bike-name">R 1250 GS</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>136 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span>249 kg</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Range</span>
+                            <span>400 km</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$18,995</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Yearly</h3>
-                <p>$300 / year</p>
+
+            <!-- M 1000 RR -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">M Series</div>
+                    <h3 class="bike-name">M 1000 RR</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>212 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span>192 kg</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Top Speed</span>
+                            <span>306 km/h</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$32,995</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- F 900 R -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">Roadster</div>
+                    <h3 class="bike-name">F 900 R</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>105 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span>211 kg</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Torque</span>
+                            <span>92 Nm</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$9,995</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- R 18 -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1558980664-10e7170b5df9?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">Cruiser</div>
+                    <h3 class="bike-name">R 18</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>91 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Engine</span>
+                            <span>1802 cc</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Torque</span>
+                            <span>158 Nm</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$18,495</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+
+            <!-- S 1000 XR -->
+            <div class="bike-card">
+                <div class="bike-image" style="background-image: url('https://images.unsplash.com/photo-1609883874228-8290c16fc94a?w=800&q=80');"></div>
+                <div class="bike-info">
+                    <div class="bike-category">Sport Touring</div>
+                    <h3 class="bike-name">S 1000 XR</h3>
+                    <div class="bike-specs">
+                        <div class="spec">
+                            <span class="spec-label">Power</span>
+                            <span>165 HP</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span>226 kg</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Range</span>
+                            <span>380 km</span>
+                        </div>
+                    </div>
+                    <div class="bike-price">$16,995</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@powerfitgym.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Location: Main Street, Your City</p>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title" style="color: var(--text-light);">Why Choose BMW Motorrad</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Performance</h3>
+                <p>Cutting-edge engine technology delivering unmatched power and efficiency on every ride.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safety</h3>
+                <p>Advanced rider assistance systems including ABS Pro, traction control, and dynamic brake lights.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💎</div>
+                <h3>Premium Quality</h3>
+                <p>German engineering excellence with meticulous attention to every detail and component.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h3>Innovation</h3>
+                <p>Pioneering technology including ShiftCam, connectivity features, and adaptive headlights.</p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        © 2026 PowerFit Gym. All Rights Reserved.
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BMW Motorrad</h4>
+                <p>Experience the ultimate riding machine. German engineering meets passion for motorcycling.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#">Financing</a></li>
+                    <li><a href="#">Test Ride</a></li>
+                    <li><a href="#">Dealers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Service & Parts</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Owner's Manual</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMW Motorrad. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
     </footer>
-
 </body>
 </html>
